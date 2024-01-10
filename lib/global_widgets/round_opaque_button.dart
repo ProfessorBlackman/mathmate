@@ -14,11 +14,13 @@ class RoundOpaqueButton extends StatelessWidget {
     var resultsModel = Provider.of<ResultsModel>(context, listen: false);
     return ElevatedButton(
         onPressed: () {
+          var userInput = resultsModel.userInput.replaceAll("%", "/100");
           Parser parser = Parser();
-          Expression expression = parser.parse(resultsModel.userInput);
+          Expression expression = parser.parse(userInput);
           ContextModel contextModel = ContextModel();
           double eval = expression.evaluate(EvaluationType.REAL, contextModel);
           resultsModel.results = eval.toDouble();
+          // resultsModel.userInput = '';
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.purpleAccent,

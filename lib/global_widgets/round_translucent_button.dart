@@ -14,6 +14,9 @@ class RoundTranslucentButton extends StatelessWidget {
     var resultsModel = Provider.of<ResultsModel>(context, listen: false);
     return ElevatedButton(
         onPressed: () {
+          if(resultsModel.results != 0.0){
+            resultsModel.userInput = '';
+          }
           resultsModel.userInput = '${resultsModel.userInput}$value';
         },
         style: ElevatedButton.styleFrom(
