@@ -16,6 +16,7 @@ class RoundTranslucentButton extends StatelessWidget {
         onPressed: () {
           if(resultsModel.results != 0.0){
             resultsModel.userInput = '';
+            resultsModel.results = 0.0;
           }
           resultsModel.userInput = '${resultsModel.userInput}$value';
         },

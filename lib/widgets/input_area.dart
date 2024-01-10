@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mathmate/global_widgets/round_opaque_button.dart';
 import 'package:mathmate/global_widgets/round_outline_button.dart';
 import 'package:mathmate/global_widgets/round_translucent_button.dart';
+import 'package:mathmate/widgets/history_button.dart';
 import 'package:provider/provider.dart';
 
 import '../state_management/results_model.dart';
@@ -224,14 +225,14 @@ class InputAreaState extends State<InputArea> {
           ),
           const RoundTranslucentButton(
             buttonChild: Text(
-              ",",
+              ".",
               style: TextStyle(
                 fontSize: 35.0,
                 fontWeight: FontWeight.normal,
                 color: Colors.white,
               ),
             ),
-            value: ",",
+            value: ".",
           ),
           const RoundOpaqueButton(
               buttonChild: Text(
@@ -242,6 +243,7 @@ class InputAreaState extends State<InputArea> {
               color: Colors.white,
             ),
           )),
+          HistoryButton(),
         ],
       ),
     );
